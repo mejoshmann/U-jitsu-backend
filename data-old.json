@@ -1,0 +1,32 @@
+[
+    { "month": "Jan", "Days": 10 },
+    { "month": "Feb", "Days": 5 },
+    { "month": "Mar", "Days": 10 },
+    { "month": "Apr", "Days": 10 },
+    { "month": "May", "Days": 10 },
+    { "month": "Jun", "Days": 5 },
+    { "month": "Jul", "Days": 0 },
+    { "month": "Aug", "Days": 0 },
+    { "month": "Sep", "Days": 0 },
+    { "month": "Oct", "Days": 0 },
+    { "month": "Nov", "Days": 0 },
+    { "month": "Dec", "Days": 0 },
+    { "gi": 10, "nogi": 5 },
+    {
+      "name": "Joshua",
+      "belt": "blue",
+      "experience": "2",
+      "gender": "male",
+      "age": "39",
+      "location": "Vancouver",
+      "school": "Gracie Barra",
+      "bio": "Cool Stuff"
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+  
