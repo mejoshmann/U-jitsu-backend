@@ -21,13 +21,14 @@ app.get("/", (req, res) => {
 
 
 // Profile post and update
-app.post("/", (req, res) => {
+app.post("/profile", (req, res) => {
   const profileDataJASON = fs.readFileSync("./data.json")
   const profileData = JSON.parse(profileDataJASON);
   console.log("profileData: ", profileData[0].exercises);
   console.log("body: ", req.body);
 
-  
+  // const currentDate = new Date();
+  // const day = currentDate.getDate();
 
   const formData = {
     name: req.body.name,
@@ -38,22 +39,8 @@ app.post("/", (req, res) => {
     location: req.body.location,
     school: req.body.school,
     bio: req.body.school,
-    trainingDates:[
-    { "month": "Jan", "Days": 0 },
-    { "month": "Feb", "Days": 0 },
-    { "month": "Mar", "Days": 0 },
-    { "month": "Apr", "Days": 0 },
-    { "month": "May", "Days": 0 },
-    { "month": "Jun", "Days": 0 },
-    { "month": "Jul", "Days": 0 },
-    { "month": "Aug", "Days": 0 },
-    { "month": "Sep", "Days": 0 },
-    { "month": "Oct", "Days": 0 },
-    { "month": "Nov", "Days": 0 },
-    { "month": "Dec", "Days": 0 }],
-    exercises: []
   };
-  // profileData[0] = {}
+  profileData[0] = {}
 
   profileData.push(formData)
   const updateProfile = JSON.stringify(profileData);
@@ -61,57 +48,35 @@ app.post("/", (req, res) => {
   res.status(201).send("Profile successfully updated");
 });
 
-app.post("/exercises", (req, res) => {
-
+app.post("/training", (req, res) => {
   const profileDataJSON = fs.readFileSync("./data.json")
   const profileData = JSON.parse(profileDataJSON)
 
+
+  const currentDate = new Date();
+  const options = { weekday: 'short', month: 'short', day: 'numeric' };
+  const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
   const trainData = {
-    hours: req.body.name,
+    date: formattedDate,
+    hours: req.body.hours,
     journal: req.body.journal,
     takedowns: req.body.takedowns,
     positions: req.body.positions,
     submissions: req.body.submissions,
     movements: req.body.movements,
+    gi: false,
+    gi: false,
   };
 
-  profileData[0].exercises.push(trainData);
+  profileData[3].training.push(trainData);
   const updateProfile = JSON.stringify(profileData);
   fs.writeFileSync("./data.json", updateProfile);
   res.status(201).send("Profile successfully updated");
 });
 
-app.get("/scrape", (req, res) => {
 
-  (async () => {
-    // Launch the browser
-    const browser = await puppeteer.launch();
-
-    // Create a page
-    const page = await browser.newPage();
-
-    // Go to your site
-    await page.goto('https://grapplingindustries.smoothcomp.com/en/event/9408');
-
-    // Query for an element handle.
-    const h1Element = await page.waitForSelector('h1');
-    const h1Text = await page.evaluate((el) => el.textContent, h1Element);
-
-    const pElement = await page.waitForSelector('p');
-    const pText = await page.evaluate((el) => el.textContent, pElement);
-
-
-    // console.log('element', element);
-    await browser.close();
-    res.json({ title: h1Text, info: pText });
-    
-  }
-  )();
-
-})
-
-
-app.get('/api/knowledge/points', (_req, res) => {
+app.get('/knowledge/page', (_req, res) => {
   fs.readFile('knowledge.json', 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading knowledge data:', err);
@@ -122,19 +87,6 @@ app.get('/api/knowledge/points', (_req, res) => {
     }
   });
 });
-
-// app.get('/api/knowledge/takedowns', (req, res) => {
-//   fs.readFile('knowledge.json', 'utf8', (err, data) => {
-//     if (err) {
-//       console.error('Error reading knowledge data:', err);
-//       res.status(500).send('Error reading knowledge data');
-//     } else {
-//       const knowledgeData = JSON.parse(data);
-//       res.status(200).json(knowledgeData);
-//     }
-//   });
-// });
-
 
 
 
