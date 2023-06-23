@@ -1,0 +1,144 @@
+[
+  {
+    "points": [
+      {
+        "id": "takedown",
+        "heading": "Takedowns",
+        "points": "2 Points",
+        "info": "Unlike most other grappling combat sports, the takedown is not highly valued in this ruleset. Taking the opponent down and controlling him will earn you only two points. To get them, the opponent must land on his back, side, or butt, and you must establish top position for at least 3 seconds."
+      },
+      {
+        "id": "sweep",
+        "heading": "Sweeps",
+        "points": "2 Points",
+        "info": "A sweep is performed when you reverse the position from the bottom and end up in top position. To get the 2 points, you need to start from full guard or half guard. Many competitors prefer to allow being taken down and perform a sweep to negate the 2 points earned by the opponent’s takedown."
+      },
+      {
+        "id": "knee",
+        "heading": "Knee on Belly",
+        "points": "2 Points",
+        "info": "As it’s clear from the name, the knee-on-belly position entails placing your knee or shin on the opponent’s belly or chest. Again, you need to hold the position for 3 seconds before you get the points."
+      },
+      {
+        "id": "guard",
+        "heading": "Guard Pass",
+        "points": "3 Points",
+        "info": "The only move to score 3 points is passing the guard. A guard pass means overcoming the opponent’s guard and ending up in side control, north south, or mount, all considered dominant positions, unlike the guards, which are neutral."
+      },
+      {
+        "id": "mount",
+        "heading": "Mount",
+        "points": "4 Points",
+        "info": "Mount is a dominant position achieved when sitting on your opponent’s belly or chest. You must have both knees or one knee and a foot on the ground for a mount to be scored. Back Mount is where you are on your opponent’s back, and both of you face the ground. Both the mount and back mount are dominant positions for the attacker and are scored accordingly."
+      },
+      {
+        "id": "back",
+        "heading": "Back Control",
+        "points": "4 Points",
+        "info": "Back control is very similar to back mount. Still, the difference is that the opponent sits on the floor instead of lying on his belly. You must have both legs inside his hips to get the precious 3 points awarded for back control."
+      },
+      {
+        "id": "advantage",
+        "heading": "Advantages",
+        "points": "",
+        "info": "Advantage points are awarded that come into play only when the score is a draw. You can earn advantage points in different scenarios. The most common is when you cannot hold a position for the entire 3 seconds required for scoring. For example, you may pass the guard and go into side control. Still, the opponent escapes after two seconds, which gives you an advantage point. Advantage points can also be earned for attempted and nearly finished submissions. Then referees are also allowed to award advantage points after the match is over but before the results are revealed, and in this way, settle the draw."
+      }
+    ]
+  },
+  {
+    "takedowns": [
+      {
+        "id": "single leg",
+        "heading": "Single Leg",
+        "info": "The single leg takedown (often shortened to single leg or single or single leg shot) involves grabbing one of the legs of the opponent, usually with both hands, and using the position to force the opponent to the ground. Typically, the lower part of the leg is pulled in one direction, while the torso or shoulder is used to press the body or upper part of the leg of the opponent in the other direction."
+      },
+      {
+        "id": "double leg",
+        "heading": "Double Leg",
+        "info": "The double leg takedown (colloquially known as a double leg or double) involves grabbing the opponent with both arms around the opponent's legs while keeping the chest close to the opponent, and using this position to force the opponent to the ground. There are several varieties of forcing the opponent to the ground, such as lifting and slamming, or pushing forward with the shoulder while pulling the opponent's legs. The double leg takedown can be countered similarly to a single leg takedown, by sprawling, moving away, and/or striking. The guillotine choke is also a good counter to a poorly performed double leg takedown"
+      },
+      {
+        "id": "osoto gari",
+        "heading": "Osotogari",
+        "info": "Osotogari is one of the original 40 throws of Judo as developed by Jigoro Kano. It belongs to the first group, Dai Ikkyo, of the traditional throwing list, Gokyo (no waza), of Kodokan Judo. It is also included in the current 67 Throws of Kodokan Judo. It is classified as a foot technique, Ashi-Waza."
+      },
+      {
+        "id": "Shoulder throw",
+        "heading": "Shoulder Throw",
+        "info": "A Shoulder Throw is a throw in judo. It is one of the traditional forty throws of judo as developed by Jigoro Kano. It belongs to the first group, Dai Ikkyo, of the traditional throwing list, Gokyo (no waza), of Kodokan Judo. It is also part of the current official throws of Kodokan Judo. It is classified as a hand technique, te-waza, and is the second throw performed in the Nage-no-kata. Seoi nage literally means over the back throw, but has also been translated as a shoulder throw, as the opponent or uke is thrown over the thrower or tori's shoulder."
+      }
+    ]
+  },
+  {
+    "positions": [
+      {
+        "id": "guard",
+        "heading": "Guard",
+        "info": "The guard is a ground grappling position in which one combatant has their back to the ground while attempting to control the other combatant using their legs. In pure grappling combat sports, the guard is considered an advantageous position, because the bottom combatant can attack with various joint locks and chokeholds, while the top combatant's priority is the transition into a more dominant position, a process known as passing the guard."
+      },
+      {
+        "id": "side control",
+        "heading": "Side Control",
+        "info": "The guard is a ground grappling position in which one combatant has their back to the ground while attempting to control the other combatant using their legs. In pure grappling combat sports, the guard is considered an advantageous position, because the bottom combatant can attack with various joint locks and chokeholds, while the top combatant's priority is the transition into a more dominant position, a process known as passing the guard."
+      },
+      {
+        "id": "mount",
+        "heading": "Mount",
+        "info": "The mount, or mounted position, is a dominant ground grappling position, where one combatant sits on the other combatants torso with the face pointing towards the opponent's head. This is a favorable position for the top combatant in several ways. The top combatant can generate considerable momentum for strikes (such as punches or elbows) to the head of the opponent, while the bottom combatant is restricted by the ground and by the combatant on top. Other advantages include various chokeholds and joint locks that can be applied from the top. The bottom combatant will usually look to sweep the opponent or transition into a better position such as the guard."
+      },
+      {
+        "id": "back control",
+        "heading": "Back Control",
+        "info": "Back Control is a dominant grappling position where the practitioner is on their opponent's back in such a way that they have control of their opponent (in back control, the practitioner controls their opponent from the back in any position that is not atop). Ideally, the opponent will be recumbent (prone), while the practitioner centers their weight atop the opponent, either in a seated or recumbent posture. Many consider back mount to be a very dominant, perhaps even the most advantageous position in grappling. This is due to the practitioner being able to attack with strikes and submissions with the opponent having a severely limited ability to see incoming attacks and defend against them"
+      }
+    ]
+  },
+  {
+    "submissions": [
+      {
+        "id": "triangle",
+        "heading": "Triangle",
+        "info": "A triangle choke, or sankaku-jime (三角絞) in judo, is a type of figure-four chokehold that encircles the opponent's neck and one arm with the legs in a configuration similar to the shape of a triangle. Applying pressure using both legs and the opponent's own shoulder, the technique is a type of lateral vascular restraint that constricts the blood flow from the carotid arteries to the brain, potentially resulting in loss of consciousness in seconds when applied correctly. Recent studies have shown that the triangle choke takes an average of 9.5 seconds to render an opponent unconscious from the moment it is properly applied."
+      },
+      {
+        "id": "arm bar",
+        "heading": "Arm Bar",
+        "info": "Ude-Hishigi-Juji-Gatame (腕挫十字固) is one of the official 29 grappling techniques of Kodokan Judo. It is one of the nine joint techniques of the Kansetsu-waza list, one of the three grappling lists in Judo's Katame-waza[1] enumerating 29 grappling techniques.[2] All of Judo's competition legal joint techniques are arm locks."
+      },
+      {
+        "id": "guillotine",
+        "heading": "Guillotine",
+        "info": "The guillotine choke, also known as Mae Hadaka Jime in judo, is a chokehold in martial arts applied from in front of the opponent, often on the ground but can also be done while standing.[1] The choke involves using the arms to encircle the opponent's neck that bears a resemblance to the blade of a guillotine."
+      },
+      {
+        "id": "rear naked choke",
+        "heading": "Rear Naked Choke",
+        "info": "The rear naked choke is a chokehold in martial arts applied from an opponent's back. The word naked in this context suggests that, unlike other strangulation techniques found in jujutsu/judo, this hold does not require the use of a keikogi gi or training uniform.The choke has two variations:[1] in one version, the attacker's arm encircles the opponent's neck and then grabs their own biceps on the other arm (see below for details); in the second version, the attacker clasps their hands together instead after encircling the opponent's neck.[2] Recent studies have shown that the rear-naked choke takes an average of 8.9 seconds to render an opponent unconscious regardless of the grip that is used."
+      }
+    ]
+  },
+  {
+    "jointlocks": [
+        {
+            "id": "arm lock",
+            "heading": "Arm Lock",
+            "info": "An armlock in grappling is a single or double joint lock that hyperextends, hyperflexes or hyperrotates the elbow joint or shoulder joint. An armlock that hyper-extends the arm is known as an armbar, and it includes the traditional armbar, pressing their elbow into your thigh, and the triangle armbar, like a triangle choke, but you press their elbow into your thigh."
+        },
+        {
+            "id": "leg lock",
+            "heading": "Leg Lock",
+            "info": "A leglock is a joint lock that is directed at joints of the leg such as the ankle, knee or hip joint.[1] A leglock which is directed at joints in the foot, is sometimes referred to as a foot lock and a lock at the hip as a hip lock."
+        },
+        {
+            "id": "kimura",
+            "heading": "Kimura",
+            "info": "The Kimura Lock is one of the most effective finishing holds in all of grappling. It’s a great submission, and it’s used by many high-level competitors in Brazilian Jiu-Jitsu. A good Kimura can end many fights, but there are several details that must be learned before you can execute it correctly. This article is a breakdown of the Kimura so that all of the details are clearly explained, making the lock easier to learn and use."
+        },
+        {
+            "id": "ankle lock",
+            "heading": "Ankle Lock",
+            "info": "Ashi-Hishigi also called an Achilles lock or simply an ankle lock, is a technique described in both The Canon Of Judo[1] by Kyuzo Mifune and Brazilian Jiu-Jitsu, Theory and Technique[2] by Renzo Gracie and Royler Gracie as well as demonstrated in the video, The Essence Of Judo. It is classified as a joint lock (Kansetsu-waza), and is not a recognized technique of the Kodokan. However, it is a commonly used technique in both Brazilian Jiu-Jitsu tournaments and Mixed martial arts competition."
+        }
+    ]
+  }
+]

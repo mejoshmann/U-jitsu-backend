@@ -1,6 +1,11 @@
 const app = require("./server");
 const fs = require("fs");
 const PORT = 1080;
+const puppeteer = require("puppeteer");
+const path = require("path");
+require('events').EventEmitter.defaultMaxListeners = 15;
+
+
 
 app.get("/", (req, res) => {
   fs.readFile("data.json", "utf8", (err, data) => {
@@ -33,7 +38,8 @@ app.post("/", (req, res) => {
     location: req.body.location,
     school: req.body.school,
     bio: req.body.school,
-    trainingDates:[{ "month": "Jan", "Days": 0 },
+    trainingDates:[
+    { "month": "Jan", "Days": 0 },
     { "month": "Feb", "Days": 0 },
     { "month": "Mar", "Days": 0 },
     { "month": "Apr", "Days": 0 },
@@ -74,6 +80,63 @@ app.post("/exercises", (req, res) => {
   fs.writeFileSync("./data.json", updateProfile);
   res.status(201).send("Profile successfully updated");
 });
+
+app.get("/scrape", (req, res) => {
+
+  (async () => {
+    // Launch the browser
+    const browser = await puppeteer.launch();
+
+    // Create a page
+    const page = await browser.newPage();
+
+    // Go to your site
+    await page.goto('https://grapplingindustries.smoothcomp.com/en/event/9408');
+
+    // Query for an element handle.
+    const h1Element = await page.waitForSelector('h1');
+    const h1Text = await page.evaluate((el) => el.textContent, h1Element);
+
+    const pElement = await page.waitForSelector('p');
+    const pText = await page.evaluate((el) => el.textContent, pElement);
+
+
+    // console.log('element', element);
+    await browser.close();
+    res.json({ title: h1Text, info: pText });
+    
+  }
+  )();
+
+})
+
+
+app.get('/api/knowledge/points', (_req, res) => {
+  fs.readFile('knowledge.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading knowledge data:', err);
+      res.status(500).send('Error reading knowledge data');
+    } else {
+      const knowledgeData = JSON.parse(data);
+      res.status(200).json(knowledgeData);
+    }
+  });
+});
+
+// app.get('/api/knowledge/takedowns', (req, res) => {
+//   fs.readFile('knowledge.json', 'utf8', (err, data) => {
+//     if (err) {
+//       console.error('Error reading knowledge data:', err);
+//       res.status(500).send('Error reading knowledge data');
+//     } else {
+//       const knowledgeData = JSON.parse(data);
+//       res.status(200).json(knowledgeData);
+//     }
+//   });
+// });
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
