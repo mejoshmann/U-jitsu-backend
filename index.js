@@ -24,8 +24,6 @@ app.get("/", (req, res) => {
 app.post("/profile", (req, res) => {
   const profileDataJASON = fs.readFileSync("./data.json")
   const profileData = JSON.parse(profileDataJASON);
-  console.log("profileData: ", profileData[0].exercises);
-  console.log("body: ", req.body);
 
   // const currentDate = new Date();
   // const day = currentDate.getDate();
@@ -40,12 +38,34 @@ app.post("/profile", (req, res) => {
     school: req.body.school,
     bio: req.body.school,
   };
-  profileData[0] = {}
+  // profileData[0] = {}
 
-  profileData.push(formData)
+  profileData.splice(0, 0, formData)
   const updateProfile = JSON.stringify(profileData);
   fs.writeFileSync("./data.json", updateProfile);
   res.status(201).send("Profile successfully updated");
+});
+
+// Profile Delete
+app.delete("/profile", (req, res) => {
+  fs.readFile("data.json", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading data.json:", err);
+      res.status(500).send("Error reading data.json");
+    } else {
+      const deleteProfile = JSON.parse(data);
+      delete deleteProfile.splice(0, 1);
+      const updatedProfile = JSON.stringify(deleteProfile);
+      fs.writeFile("data.json", updatedProfile, (err) => {
+        if (err) {
+          console.error("Error writing data.json:", err);
+          res.status(500).send("Error writing data.json");
+        } else {
+          res.status(200).send("Profile section deleted successfully");
+        }
+      });
+    }
+  });
 });
 
 app.post("/training", (req, res) => {
@@ -87,6 +107,7 @@ app.get('/knowledge/page', (_req, res) => {
     }
   });
 });
+
 
 
 
