@@ -3,12 +3,13 @@ const fs = require("fs");
 const PORT = 1080;
 const puppeteer = require("puppeteer");
 const path = require("path");
+const grapplingInfo = require("./scrape");
 require('events').EventEmitter.defaultMaxListeners = 15;
 
 
 
-app.get("/", (req, res) => {
-  fs.readFile("data.json", "utf8", (err, data) => {
+app.get("/training", (_req, res) => {
+  fs.readFile("demoData.json", "utf8", (err, data) => {
     if (err) {
       console.error("Error reading profile data:", err);
       res.status(500).send("Error reading profile data");
@@ -25,9 +26,6 @@ app.post("/profile", (req, res) => {
   const profileDataJASON = fs.readFileSync("./data.json")
   const profileData = JSON.parse(profileDataJASON);
 
-  // const currentDate = new Date();
-  // const day = currentDate.getDate();
-
   const formData = {
     name: req.body.name,
     belt: req.body.belt,
@@ -38,7 +36,6 @@ app.post("/profile", (req, res) => {
     school: req.body.school,
     bio: req.body.school,
   };
-  // profileData[0] = {}
 
   profileData.splice(0, 0, formData)
   const updateProfile = JSON.stringify(profileData);
@@ -47,7 +44,7 @@ app.post("/profile", (req, res) => {
 });
 
 // Profile Delete
-app.delete("/profile", (req, res) => {
+app.delete("/profile", (_req, res) => {
   fs.readFile("data.json", "utf8", (err, data) => {
     if (err) {
       console.error("Error reading data.json:", err);
@@ -108,6 +105,15 @@ app.get('/knowledge/page', (_req, res) => {
   });
 });
 
+app.get("/scrape", async (req, res) => {
+  try {
+    const extractedData = await pageScraper.grapplingInfo();
+    res.json(extractedData);
+  } catch (error) {
+    console.error("An error occurred while scraping:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 
 

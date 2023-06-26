@@ -9,7 +9,7 @@
           "age": "39",
           "location": "Vancouver",
           "school": "Gracie Barra",
-          "bio": "Gracie Barra"
+          "bio": "I really enjoy Jiu Jitsu, it keeps me healthy and my mind sharp."
         }
       ]
     },
@@ -17,7 +17,7 @@
     {
       "training": [
         {
-          "date": "Fri, Jun 23",
+          "date": "Sat, July 1",
           "hours": 5,
           "journal": "Newest training",
           "takedowns": "Double Leg",
@@ -27,7 +27,7 @@
           "gi": "Gi"
         },
         {
-          "date": "Fri, Jun 22",
+          "date": "fri, Jun 30",
           "hours": 3,
           "journal": "Newest Training",
           "takedowns": "Shoulder Throw",
@@ -37,7 +37,7 @@
           "gi": "Gi"
         },
         {
-          "date": "Fri, Jun 20",
+          "date": "Thu, Jun 29",
           "hours": 3,
           "journal": "Newest Training",
           "takedowns": "Shoulder Throw",
@@ -47,7 +47,7 @@
           "gi": "No Gi"
         },
         {
-          "date": "Fri, Jun 19",
+          "date": "Wed, Jun 28",
           "hours": 3,
           "journal": "Newest Training",
           "takedowns": "Shoulder Throw",
@@ -57,7 +57,7 @@
           "gi": "Gi"
         },
         {
-          "date": "Fri, Jun 18",
+          "date": "Tues, Jun 27",
           "hours": 3,
           "journal": "Newest Training",
           "takedowns": "Shoulder Throw",
@@ -67,7 +67,7 @@
           "gi": "No Gi"
         },
         {
-          "date": "Fri, Jun 17",
+          "date": "Mon, Jun 26",
           "hours": 3,
           "journal": "Newest Training",
           "takedowns": "Shoulder Throw",
@@ -77,7 +77,7 @@
           "gi": "Gi"
         },
         {
-          "date": "Fri, Jun 16",
+          "date": "Sun, Jun 25",
           "hours": 3,
           "journal": "last training",
           "takedowns": "Single Leg",

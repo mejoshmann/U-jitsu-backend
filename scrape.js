@@ -1,45 +1,57 @@
 const puppeteer = require("puppeteer");
 
-const grapplingInfo = {
-  url: "https://grapplingindustries.smoothcomp.com/en/event/9408",
+async function grapplingInfo() {
+  const urls = [ 
+                "https://grapplingindustries.smoothcomp.com/en/event/9408",
+                "https://adcc.smoothcomp.com/en/event/11951",
+];
 
-  async scrapeWebsite() {
+  const scrapedData = [];
+
     try {
-      // Launch a headless browser instance
-      const browser = await puppeteer.launch();
-
-      // Create a new page
+      const browser = await puppeteer.launch({
+        headless: "new",
+      });
       const page = await browser.newPage();
 
-      console.log(`Navigating to ${this.url}...`);
-      await page.goto(this.url);
 
-      // Wait for the required DOM to be rendered
+      for (const url of urls) {
+        console.log(`Navigation to ${url}...`);
+        
+      
+
+      await page.goto(this.url);
       await page.waitForSelector(".content");
 
-      // Scrape the desired information
       const dataObj = await page.evaluate(() => {
         const titleElement = document.querySelector("h1");
-        const dateLocationElement = document.querySelector(
-          ".information p:nth-child(2)"
-        );
-
+        const locationElement = document.querySelector("div.information p");
+        const dateElement = document.querySelector("div.date");
+        const daysLeftElement = document.querySelector("div.days span");
+      
+        const title = titleElement ? titleElement.textContent.trim() : "";
+        const location = locationElement ? locationElement.textContent.trim() : "";
+        const date = dateElement ? dateElement.textContent.trim() : "";
+        const daysLeft = daysLeftElement ? daysLeftElement.textContent.trim() : "";
+      
         return {
-          title: titleElement ? titleElement.textContent.trim() : "",
-          dateLocation: dateLocationElement
-            ? dateLocationElement.textContent.trim()
-            : "",
+          title,
+          location,
+          date,
+          daysLeft,
         };
       });
+      scrapedData.push(dataObj);
+    }
+      
 
-      console.log(dataObj);
-
-      // Close the browser instance
       await browser.close();
     } catch (error) {
       console.error("An error occurred while scraping:", error);
+      throw error;
     }
-  },
-};
+
+  return scrapedData;
+}
 
 module.exports = grapplingInfo;

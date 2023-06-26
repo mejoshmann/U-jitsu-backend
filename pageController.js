@@ -2,7 +2,6 @@ const pageScraper = require("../scraper/independentPageScraper");
 
 async function scrapeAll(browserInstance, scraper) {
   let browser;
-  console.log("scraper: ", scraper);
   try {
     browser = await browserInstance;
     await scraper.scraper(browser);
