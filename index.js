@@ -21,7 +21,7 @@ app.get("/training", (_req, res) => {
 });
 
 
-// Profile post and update
+// Post new profile
 app.post("/profile", (req, res) => {
   const profileDataJASON = fs.readFileSync("./data.json")
   const profileData = JSON.parse(profileDataJASON);
@@ -42,6 +42,7 @@ app.post("/profile", (req, res) => {
   fs.writeFileSync("./data.json", updateProfile);
   res.status(201).send("Profile successfully updated");
 });
+
 
 // Profile Delete
 app.delete("/profile", (_req, res) => {
@@ -83,10 +84,10 @@ app.post("/training", (req, res) => {
     submissions: req.body.submissions,
     movements: req.body.movements,
     gi: false,
-    gi: false,
+    noGi: false,
   };
 
-  profileData[3].training.push(trainData);
+  profileData[2].training.push(trainData);
   const updateProfile = JSON.stringify(profileData);
   fs.writeFileSync("./data.json", updateProfile);
   res.status(201).send("Profile successfully updated");
@@ -107,13 +108,14 @@ app.get('/knowledge/page', (_req, res) => {
 
 app.get("/scrape", async (req, res) => {
   try {
-    const extractedData = await pageScraper.grapplingInfo();
+    const extractedData = await grapplingInfo();
     res.json(extractedData);
   } catch (error) {
     console.error("An error occurred while scraping:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 
 

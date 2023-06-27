@@ -12,22 +12,21 @@ async function grapplingInfo() {
       const browser = await puppeteer.launch({
         headless: "new",
       });
-      const page = await browser.newPage();
 
 
       for (const url of urls) {
         console.log(`Navigation to ${url}...`);
-        
-      
 
-      await page.goto(this.url);
+      
+      const page = await browser.newPage();
+      await page.goto(url);
       await page.waitForSelector(".content");
 
       const dataObj = await page.evaluate(() => {
         const titleElement = document.querySelector("h1");
         const locationElement = document.querySelector("div.information p");
         const dateElement = document.querySelector("div.date");
-        const daysLeftElement = document.querySelector("div.days span");
+        const daysLeftElement = document.querySelector("div.days muted span");
       
         const title = titleElement ? titleElement.textContent.trim() : "";
         const location = locationElement ? locationElement.textContent.trim() : "";

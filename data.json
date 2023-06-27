@@ -3,7 +3,7 @@
     "profile": [
       {
         "name": "Joshua",
-        "belt": "blue",
+        "belt": "red",
         "experience": "3",
         "gender": "male",
         "age": "39",
@@ -85,6 +85,28 @@
         "submissions": "Arm Bar",
         "movements": "Bridging",
         "gi": false
+      },
+      {
+        "date": "Mon, Jun 26",
+        "hours": 4,
+        "journal": "Latest Training",
+        "takedowns": "Double Leg",
+        "positions": "Side Control",
+        "submissions": "Triangle",
+        "movements": "Escapes",
+        "gi": false,
+        "noGi": false
+      },
+      {
+        "date": "Mon, Jun 26",
+        "hours": "",
+        "journal": "",
+        "takedowns": "",
+        "positions": "",
+        "submissions": "",
+        "movements": "",
+        "gi": false,
+        "noGi": false
       }
     ]
   },
